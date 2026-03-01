@@ -75,28 +75,28 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', function() {
         const header = document.querySelector('header');
         if (window.scrollY > 100) {
-            header.style.backgroundColor = 'rgba(102, 205, 205, 0.95)';
+            header.style.backgroundColor = 'rgba(255, 0, 0, 0.95)';
         } else {
             header.style.backgroundColor = 'var(--primary-color)';
         }
     });
 
-    // Apply turquoise theme color to body and other elements
+    // Apply red theme color to body and other elements
     document.addEventListener('DOMContentLoaded', function() {
-        document.body.style.backgroundColor = 'rgba(102, 205, 205, 0.9)';
-        document.querySelector('header').style.backgroundColor = 'rgba(102, 205, 205, 0.8)';
-        document.querySelector('main').style.backgroundColor = 'rgba(102, 205, 205, 0.9)';
-        document.querySelector('footer').style.backgroundColor = 'rgba(102, 205, 205, 0.8)';
-        document.querySelector('nav').style.backgroundColor = 'rgba(102, 205, 205, 0.9)';
+        document.body.style.backgroundColor = 'rgba(255, 0, 0, 0.9)';
+        document.querySelector('header').style.backgroundColor = 'rgba(255, 0, 0, 0.8)';
+        document.querySelector('main').style.backgroundColor = 'rgba(255, 0, 0, 0.9)';
+        document.querySelector('footer').style.backgroundColor = 'rgba(255, 0, 0, 0.8)';
+        document.querySelector('nav').style.backgroundColor = 'rgba(255, 0, 0, 0.9)';
     });
 
-    // Add hover effects to feature cards with turquoise accent
+    // Add hover effects to feature cards with red accent
     const featureCards = document.querySelectorAll('.feature-card');
     featureCards.forEach(card => {
         card.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-10px)';
             this.style.transition = 'transform var(--transition-speed) ease';
-            this.style.boxShadow = '0 4px 8px rgba(102, 205, 205, 0.4)';
+            this.style.boxShadow = '0 4px 8px rgba(255, 0, 0, 0.4)';
         });
 
         card.addEventListener('mouseleave', function() {
@@ -105,16 +105,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add interactive elements for best practices with turquoise highlight
+    // Add interactive elements for best practices with red highlight
     const practiceItems = document.querySelectorAll('.practice-item');
     practiceItems.forEach(item => {
         item.addEventListener('click', function() {
-            this.style.backgroundColor = 'rgba(102, 205, 205, 0.2)';
+            this.style.backgroundColor = 'rgba(255, 0, 0, 0.2)';
             this.style.transition = 'background-color var(--transition-speed) ease';
         });
 
         item.addEventListener('mouseleave', function() {
-            this.style.backgroundColor = 'rgba(102, 205, 205, 0.1)';
+            this.style.backgroundColor = 'rgba(255, 0, 0, 0.1)';
         });
     });
 });
