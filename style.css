@@ -1,7 +1,7 @@
 :root {
-    --primary-color: #00ced1;
+    --primary-color: #ff0000;
     --secondary-color: #333;
-    --accent-color: #00ced1;
+    --accent-color: #ff0000;
     --light-color: #f8f9fa;
     --dark-color: #1a1b1f;
     --success-color: #28a745;
@@ -74,7 +74,7 @@ header {
 }
 
 .btn:hover {
-    background-color: #00b4d2;
+    background-color: #ff0000;
     transform: translateY(-2px);
 }
 
@@ -174,7 +174,7 @@ header {
 }
 
 .external-link:hover {
-    color: #00b4d2;
+    color: #ff0000;
 }
 
 .best-practices-section {
@@ -254,23 +254,18 @@ header {
     .hero-section h1 {
         font-size: 2.5rem;
     }
-
     .tagline {
         font-size: 1.2rem;
     }
-
     .intro-content {
         flex-direction: column;
     }
-
     .github-logo {
         width: 150px;
     }
-
     .features-grid {
         grid-template-columns: 1fr;
     }
-
     .step-by-step {
         grid-template-columns: 1fr;
     }
@@ -280,41 +275,7 @@ header {
     .hero-section h1 {
         font-size: 2rem;
     }
-
     .container {
         width: 95%;
-    }
-}
-
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
     }
 }
