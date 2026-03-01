@@ -1,7 +1,7 @@
 :root {
-    --primary-color: #24292f;
+    --primary-color: #00ced1;
     --secondary-color: #333;
-    --accent-color: #3fb677;
+    --accent-color: #00ced1;
     --light-color: #f8f9fa;
     --dark-color: #1a1b1f;
     --success-color: #28a745;
@@ -74,7 +74,7 @@ header {
 }
 
 .btn:hover {
-    background-color: #2d926d;
+    background-color: #00b4d2;
     transform: translateY(-2px);
 }
 
@@ -174,7 +174,7 @@ header {
 }
 
 .external-link:hover {
-    color: #2d926d;
+    color: #00b4d2;
 }
 
 .best-practices-section {
