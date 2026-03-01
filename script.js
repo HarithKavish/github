@@ -1,0 +1,110 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Highlight active section on scroll
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('a[href^="#"]');
+
+    window.addEventListener('scroll', function() {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= (sectionTop - 100)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // Add animation effects on scroll
+    const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.animate-on-scroll');
+
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }
+        });
+    };
+
+    // Initialize animations
+    const observer = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        rootMargin: '-50% 0px -50% 0px',
+        threshold: 0.5
+    });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+
+    // Initialize animations when page loads
+    animateOnScroll();
+
+    // Add scroll effect to header
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 100) {
+            header.style.backgroundColor = 'rgba(36, 41, 47, 0.95)';
+        } else {
+            header.style.backgroundColor = 'var(--primary-color)';
+        }
+    });
+
+    // Add hover effects to feature cards
+    const featureCards = document.querySelectorAll('.feature-card');
+    featureCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px)';
+            this.style.transition = 'transform var(--transition-speed) ease';
+        });
+
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+
+    // Add interactive elements for best practices
+    const practiceItems = document.querySelectorAll('.practice-item');
+    practiceItems.forEach(item => {
+        item.addEventListener('click', function() {
+            this.style.backgroundColor = '#e9ecef';
+            this.style.transition = 'background-color var(--transition-speed) ease';
+        });
+
+        // Remove highlight on mouse leave
+        item.addEventListener('mouseleave', function() {
+            this.style.backgroundColor = 'white';
+        });
+    });
+});
