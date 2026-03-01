@@ -74,20 +74,28 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add scroll effect to header
     window.addEventListener('scroll', function() {
         const header = document.querySelector('header');
+        header.style.backgroundColor = 'var(--primary-color)';
+        header.style.color = 'white'; // Ensure text is readable
         if (window.scrollY > 100) {
             header.style.backgroundColor = 'rgba(255, 0, 0, 0.95)';
-        } else {
-            header.style.backgroundColor = 'var(--primary-color)';
         }
     });
 
-    // Apply red theme color to body and other elements
-    document.addEventListener('DOMContentLoaded', function() {
-        document.body.style.backgroundColor = 'rgba(255, 0, 0, 0.9)';
-        document.querySelector('header').style.backgroundColor = 'rgba(255, 0, 0, 0.8)';
-        document.querySelector('main').style.backgroundColor = 'rgba(255, 0, 0, 0.9)';
-        document.querySelector('footer').style.backgroundColor = 'rgba(255, 0, 0, 0.8)';
-        document.querySelector('nav').style.backgroundColor = 'rgba(255, 0, 0, 0.9)';
+    // Apply red theme color globally
+    document.body.style.backgroundColor = 'rgb(255, 50, 50)';
+    document.querySelector('header')?.style.backgroundColor = 'rgba(255, 0, 0, 0.95)';
+    document.querySelector('main')?.style.backgroundColor = 'rgb(255, 50, 50)';
+    document.querySelector('footer')?.style.backgroundColor = 'rgba(255, 0, 0, 0.8)';
+    document.querySelector('nav')?.style.backgroundColor = 'rgb(255, 50, 50)';
+    document.querySelector('nav a')?.style.color = 'white';
+    document.querySelector('nav a:hover')?.style.color = 'rgba(255, 255, 255, 0.8)';
+    document.querySelector('nav .logo')?.style.color = 'white';
+
+    // Ensure text readability
+    document.querySelectorAll('*').forEach(el => {
+        if (el.style.color === undefined) {
+            el.style.color = 'white';
+        }
     });
 
     // Add hover effects to feature cards with red accent
@@ -97,11 +105,13 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.transform = 'translateY(-10px)';
             this.style.transition = 'transform var(--transition-speed) ease';
             this.style.boxShadow = '0 4px 8px rgba(255, 0, 0, 0.4)';
+            this.style.backgroundColor = 'rgba(255, 50, 50, 0.8)';
         });
 
         card.addEventListener('mouseleave', function() {
             this.style.transform = 'translateY(0)';
             this.style.boxShadow = 'none';
+            this.style.backgroundColor = 'rgb(255, 50, 50)';
         });
     });
 
@@ -114,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         item.addEventListener('mouseleave', function() {
-            this.style.backgroundColor = 'rgba(255, 0, 0, 0.1)';
+            this.style.backgroundColor = 'rgba(255, 50, 50, 0.1)';
         });
     });
 });
