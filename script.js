@@ -75,36 +75,46 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', function() {
         const header = document.querySelector('header');
         if (window.scrollY > 100) {
-            header.style.backgroundColor = 'rgba(36, 41, 47, 0.95)';
+            header.style.backgroundColor = 'rgba(102, 205, 205, 0.95)';
         } else {
             header.style.backgroundColor = 'var(--primary-color)';
         }
     });
 
-    // Add hover effects to feature cards
+    // Apply turquoise theme color to body and other elements
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.style.backgroundColor = 'rgba(102, 205, 205, 0.9)';
+        document.querySelector('header').style.backgroundColor = 'rgba(102, 205, 205, 0.8)';
+        document.querySelector('main').style.backgroundColor = 'rgba(102, 205, 205, 0.9)';
+        document.querySelector('footer').style.backgroundColor = 'rgba(102, 205, 205, 0.8)';
+        document.querySelector('nav').style.backgroundColor = 'rgba(102, 205, 205, 0.9)';
+    });
+
+    // Add hover effects to feature cards with turquoise accent
     const featureCards = document.querySelectorAll('.feature-card');
     featureCards.forEach(card => {
         card.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-10px)';
             this.style.transition = 'transform var(--transition-speed) ease';
+            this.style.boxShadow = '0 4px 8px rgba(102, 205, 205, 0.4)';
         });
 
         card.addEventListener('mouseleave', function() {
             this.style.transform = 'translateY(0)';
+            this.style.boxShadow = 'none';
         });
     });
 
-    // Add interactive elements for best practices
+    // Add interactive elements for best practices with turquoise highlight
     const practiceItems = document.querySelectorAll('.practice-item');
     practiceItems.forEach(item => {
         item.addEventListener('click', function() {
-            this.style.backgroundColor = '#e9ecef';
+            this.style.backgroundColor = 'rgba(102, 205, 205, 0.2)';
             this.style.transition = 'background-color var(--transition-speed) ease';
         });
 
-        // Remove highlight on mouse leave
         item.addEventListener('mouseleave', function() {
-            this.style.backgroundColor = 'white';
+            this.style.backgroundColor = 'rgba(102, 205, 205, 0.1)';
         });
     });
 });
